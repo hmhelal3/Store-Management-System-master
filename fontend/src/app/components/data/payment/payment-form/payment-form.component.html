@@ -1,0 +1,114 @@
+<!-- <h1>Payment Form</h1>
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Order</mat-label>
+            <input matInput formControlName="order" />
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount" />
+        </mat-form-field>
+    </div>
+ 
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>PaymentDate</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="paymentDate">
+          
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="input-container">
+        <mat-form-field>
+            <mat-label>PaymentMethod</mat-label>
+            <input matInput formControlName="paymentMethod" />
+        </mat-form-field>
+    </div>
+
+    
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
+ -->
+
+
+
+
+
+
+ <!-- <h1 style="text-align: center;">Payment Form</h1>
+<div style="margin-left: 40%;">
+    <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+        
+        <div class="mb-3, col-md-4">
+            <label for="order" class="form-label">Order</label>
+            <input type="text" class="form-control" id="order" formControlName="order"> 
+            <select formControlName="order">
+                <option *ngFor="let order of orders" [value]="order.id">{{order.customer?.name}}</option>
+            </select>
+        </div>
+    
+        <div class="mb-3, col-md-4">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="text" class="form-control" id="amount" formControlName="amount">
+        </div>
+     
+        <div class="mb-3, col-md-4">
+            <label for="paymentDate" class="form-label">Payment Date</label>
+            <input type="date" class="form-control" id="paymentDate" formControlName="paymentDate">
+        </div>
+    
+        <div class="mb-3, col-md-4">
+            <label for="paymentMethod" class="form-label">Payment Method</label>
+            <input type="text" class="form-control" id="paymentMethod" formControlName="paymentMethod">
+        </div><br>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="Payment" class="btn btn-primary" style="margin-left: 30px;">Payment</button>
+    </form>
+</div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="card" >
+        <div class="card-body">
+            <h1 style="text-align: center;">Payment Form</h1>
+            <form class="row g-3" [formGroup]="formGroup" (ngSubmit)="submitForm()">
+                <div class="col-md-12">
+                    <label for="order" class="form-label">Order</label>
+                    <select class="form-control mb-3" formControlName="order" placeholder="Order">
+                        <option *ngFor="let order of orders" [value]="order.id">{{ order.customer?.name }}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control mb-3" id="amount" formControlName="amount" placeholder="Amount">
+                </div>
+                <div class="col-md-6">
+                    <input type="date" class="form-control mb-3" id="paymentDate" formControlName="paymentDate" placeholder="Payment Date">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control mb-3" id="paymentMethod" formControlName="paymentMethod" placeholder="Payment Method">
+                </div>
+                <div class="text-center col-md-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-secondary" style="margin-left: 30px;">Payment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

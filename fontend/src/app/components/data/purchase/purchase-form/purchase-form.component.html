@@ -1,0 +1,68 @@
+ <h1 style="text-align: center;">Purchase Form</h1>
+<div style="margin-left: 40%;">
+    <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+        
+        <div class="mb-3, col-md-4">
+            <label for="product" class="form-label">Product</label>
+             <input type="text" class="form-control" id="product formControlName="product> 
+            <select formControlName="product">
+                <option *ngFor="let product of products" [value]="product.id">{{product.name}}</option>
+            </select>
+        </div>
+
+        <div class="mb-3, col-md-4">
+            <label for="purchaseDate" class="form-label">Purchase Date</label>
+            <input type="date" class="form-control" id="purchase" formControlName="purchaseDate">
+        </div>
+    
+        <div class="mb-3, col-md-4">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="quantity" formControlName="quantity">
+        </div>
+     
+        
+    
+        <div class="mb-3, col-md-4">
+            <label for="totalAmount" class="form-label">TotalAmount</label>
+            <input type="number" class="form-control" id="totalAmount" formControlName="totalAmount">
+        </div><br>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div> 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="card" >
+        <div class="card-body">
+            <h1 style="text-align: center;">Purchase Form</h1>
+            <form class="row g-3" [formGroup]="formGroup" (ngSubmit)="submitForm()">
+                <div class="col-md-6">
+                    <input type="text" class="form-control mb-3" id="product" formControlName="product" placeholder="Product">
+                </div>
+                <div class="col-md-6">
+                    <input type="date" class="form-control mb-3" id="purchaseDate" formControlName="purchaseDate" placeholder="Purchase Date">
+                </div>
+                <div class="col-md-6">
+                    <input type="number" class="form-control mb-3" id="quantity" formControlName="quantity" placeholder="Quantity">
+                </div>
+                <div class="col-md-6">
+                    <input type="number" class="form-control mb-3" id="totalAmount" formControlName="totalAmount" placeholder="Total Amount">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html> -->
